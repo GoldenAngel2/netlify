@@ -1,5 +1,5 @@
 export default async (request, context) => {
-  const res = await fetch("https://my.elara.services/site/ping", {
+  const res = await fetch(`https://haste.discordcatto.repl.co/documents/${new URL(request.url).searchParams.get("id")}`, {
     "headers": {
       "Accept": "application/json"
     }
