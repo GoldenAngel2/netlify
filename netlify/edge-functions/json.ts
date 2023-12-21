@@ -9,6 +9,7 @@ export default async (request, context) => {
     body: request.body,
     headers: request.headers,
   }).catch(e => e);
+  console.log(res, await res.text());
   if (res.status !== 200) {
     return Response.json({ status: false, message: `No response from the API` });
   }
