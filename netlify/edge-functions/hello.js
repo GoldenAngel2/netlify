@@ -7,7 +7,12 @@ export default async (request, context) => {
     method: request.method,
     body: request.body,
     headers: request.headers
-  });
+  }).catch((err) =>  {
+    console.log(err);
+    return {
+    status: 404,
+    text: () => `{"status": false, "message": "Unable to fetch that."}`,
+  }});
   const text = await res.text();
   return Response.json({ status: true, text });
 };
