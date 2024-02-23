@@ -14,5 +14,6 @@ export default async (request, context) => {
     text: () => `{"status": false, "message": "Unable to fetch that."}`,
   }});
   const text = await res.text();
+  console.log(text);
   return Response.json({ status: true, text });
 };
